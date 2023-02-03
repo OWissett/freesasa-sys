@@ -1,7 +1,7 @@
 # FreeSASA FFI
 
 This crate provides raw FFI bindings to the [freesasa](https://freesasa.github.io/doxygen/index.html)
-C library, developed by [Simon Mittinatten](https://github.com/mittinatten) \[1\]. FreeSASA allows
+C library, developed by [Simon Mitternacht](https://github.com/mittinatten) \[1\]. FreeSASA allows
 you to calculate the solvent accessible surface area (SASA) of a protein from its atomic
 coordinates. The library is written in C, and is available under the MIT license.
 
