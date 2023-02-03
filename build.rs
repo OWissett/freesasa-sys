@@ -9,7 +9,9 @@ use std::path::PathBuf;
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
 
-    // copy freesasa to OUT_DIR
+    // copy freesasa to OUT_DIR - this is needed because the build script
+    // modifies the contents of the freesasa directory, which is not allowed
+    // by docs.rs, we can only modify the OUT_DIR
     let out_dir = env::var("OUT_DIR").unwrap();
     let freesasa_dir = PathBuf::from(&out_dir).join("freesasa");
     let freesasa_src = PathBuf::from("freesasa");
