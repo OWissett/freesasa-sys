@@ -9,7 +9,7 @@ fn main() {
 
     // Use autotools to compile the native library
     let dst = autotools::Config::new("freesasa")
-        .reconf("-i")
+        .reconf("-is")
         .config_option("disable-json", None)
         .config_option("disable-xml", None)
         .build();
