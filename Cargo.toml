@@ -1,0 +1,15 @@
+[package]
+name = "freesasa_ffi"
+version = "0.1.0"
+edition = "2021"
+license-file = "LICENSE"
+keywords = ["bioinfomatics", "protein", "sasa", "structural biology", "pdb"]
+repository = ""
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.63.0"
+
