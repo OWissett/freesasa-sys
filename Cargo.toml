@@ -1,10 +1,10 @@
 [package]
 name = "freesasa-sys"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license-file = "LICENSE"
 keywords = ["bioinfomatics", "protein", "sasa", "structural-biology", "pdb"]
-repository = "https://gitlab.developers.cam.ac.uk/ch/sormanni/freesasa_ffi"
+repository = "https://gitlab.developers.cam.ac.uk/ch/sormanni/freesasa_sys"
 readme = "README.md"
 description = "Rust raw FFI bindings for the freesasa C library"
 categories = ["science", "api-bindings", "mathematics", "algorithms", "parsing"]
