@@ -1,36 +1,33 @@
+extern crate autotools;
 extern crate bindgen;
 
 use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    if let Some(freesasa_location) = option_env!("FREESASA_STATIC_LIB")
-    {
-        println!(
-            "cargo:rustc-link-search=native={}",
-            freesasa_location
-        );
-    } else {
-        println!(
-            "cargo:warning=FREESASA_STATIC_LIB not set, assuming /usr/local/lib or ~/software. \
-            If this is not correct, please set FREESASA_STATIC_LIB to the directory \
-            containing libfreesasa.a"
-        );
-        println!("cargo:rustc-link-search=native=/usr/local/lib");
-    }
+    println!("cargo:rerun-if-changed=build.rs");
 
+    // Use autotools to compile the native library
+    let dst = autotools::Config::new("freesasa")
+        .reconf("-i")
+        .config_option("disable-json", None)
+        .config_option("disable-xml", None)
+        .build();
+
+    println!(
+        "cargo:rustc-link-search=native={}",
+        dst.join("lib").display()
+    );
     println!("cargo:rustc-link-lib=static=freesasa");
 
-    println!("cargo:rerun-if-changed=./include/wrapper.h");
-    println!("cargo:rerun-if-changed=build.rs");
+    let header = env::var("OUT_DIR").unwrap() + "/include/freesasa.h";
 
     // The bindgen::Builder is the main entry point
     // to bindgen, and lets you build up options for
     // the resulting bindings.
     let bindings = bindgen::Builder::default()
-        .header("./include/wrapper.h")
+        .header(header)
         .merge_extern_blocks(true)
-        .rustfmt_bindings(true)
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
         .generate()
         .expect("Unable to generate bindings");

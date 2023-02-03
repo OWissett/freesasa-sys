@@ -1,10 +1,11 @@
 [package]
-name = "freesasa_ffi"
+name = "freesasa-sys"
 version = "0.1.0"
 edition = "2021"
 license-file = "LICENSE"
 keywords = ["bioinfomatics", "protein", "sasa", "structural biology", "pdb"]
-repository = ""
+repository = "https://gitlab.developers.cam.ac.uk/ch/sormanni/freesasa_ffi"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -12,4 +13,4 @@ repository = ""
 
 [build-dependencies]
 bindgen = "0.63.0"
-
+autotools = "0.2"
