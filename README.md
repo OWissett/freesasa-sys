@@ -15,3 +15,8 @@ Please contact me via email, ow257@cam.ac.uk, if you are interested in access to
 
 ## License
 The MIT license
+
+## References
+\[1\] Simon Mitternacht (2016) FreeSASA: An open source C library for solvent accessible
+surface area calculations. F1000Research 5:189.
+(doi: [10.12688/f1000research.7931.1](https://f1000research.com/articles/5-189))
