@@ -7,7 +7,7 @@ keywords = ["bioinfomatics", "protein", "sasa", "structural-biology", "pdb"]
 repository = "https://gitlab.developers.cam.ac.uk/ch/sormanni/freesasa_ffi"
 readme = "README.md"
 description = "Rust raw FFI bindings for the freesasa C library"
-categories = ["science", "api-bindings", "biology", "chemistry", "physics"]
+categories = ["science", "api-bindings", "mathematics", "algorithms", "parsing"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
