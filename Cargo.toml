@@ -3,10 +3,11 @@ name = "freesasa-sys"
 version = "0.1.0"
 edition = "2021"
 license-file = "LICENSE"
-keywords = ["bioinfomatics", "protein", "sasa", "structural biology", "pdb"]
+keywords = ["bioinfomatics", "protein", "sasa", "structural-biology", "pdb", "ffi"]
 repository = "https://gitlab.developers.cam.ac.uk/ch/sormanni/freesasa_ffi"
 readme = "README.md"
 description = "Rust raw FFI bindings for the freesasa C library"
+categories = ["science", "api-bindings", "biology", "chemistry", "physics"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
