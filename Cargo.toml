@@ -15,6 +15,7 @@ documentation = "https://docs.rs/freesasa-sys"
 [build-dependencies]
 bindgen = "0.63.0"
 autotools = "0.2"
+fs_extra = "1.2.0"
 
 [package.metadata.docs.rs]
 no-deps = true
