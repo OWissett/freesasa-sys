@@ -8,14 +8,10 @@ use std::path::PathBuf;
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
 
-    // Ensure that the freesasa directory exists
-    if !PathBuf::from("freesasa").exists() {
-        println!("cargo:warning=The freesasa directory did not exist, automatically initializing submodules");
-        std::process::Command::new("git")
-            .args(&["submodule", "update", "--init", "--recursive"])
-            .output()
-            .expect("Failed to execute git command");
-    }
+    std::process::Command::new("git")
+        .args(&["submodule", "update", "--init", "--recursive"])
+        .output()
+        .expect("Failed to execute git command");
 
     // copy freesasa to OUT_DIR - this is needed because the build script
     // modifies the contents of the freesasa directory, which is not allowed

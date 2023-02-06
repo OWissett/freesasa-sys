@@ -16,7 +16,6 @@ documentation = "https://docs.rs/freesasa-sys"
 bindgen = "0.63.0"
 autotools = "0.2"
 fs_extra = "1.2.0"
-git2 = "0.16.1"
 
 [dependencies]
 link-cplusplus = "1.0.8"
