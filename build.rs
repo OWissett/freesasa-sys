@@ -9,7 +9,7 @@ fn main() {
     println!("cargo:rerun-if-changed=build.rs");
 
     std::process::Command::new("git")
-        .args(&["submodule", "update", "--init", "--recursive"])
+        .args(["submodule", "update", "--init", "--recursive"])
         .output()
         .expect("Failed to execute git command");
 
@@ -23,12 +23,13 @@ fn main() {
     let mut copy_options = dir::CopyOptions::new();
     copy_options.overwrite = true;
 
-    dir::copy(&freesasa_src, &out_dir, &copy_options).unwrap();
+    dir::copy(freesasa_src, &out_dir, &copy_options).unwrap();
 
     // Use autotools to compile the native library
     let dst = autotools::Config::new(&freesasa_dir)
         .reconf("-i")
         .config_option("disable-json", None)
+        .config_option("disable-threads", None)
         .config_option("disable-xml", None)
         .build();
 
