@@ -18,7 +18,7 @@ rust-latest:
 
 pages:
   image: $CI_REGISTRY/ch/sormanni/freesasa_sys:latest
-  stage: Doc
+  stage: doc
   script:
     - cargo doc --no-deps
     - mv target/doc public
