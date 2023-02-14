@@ -10,7 +10,7 @@ default:
 
 clippy:
   stage: lint
-  image: $CI_REGISTRY/ch/sormanni/frag-db/freesasa-sys:latest
+  image: $CI_REGISTRY/ch/sormanni/freesasa_sys:latest
   script:
     - rustup component add clippy
     - cargo clippy
