@@ -14,3 +14,17 @@ rust-latest:
   script:
     - cargo build --verbose
     - cargo test --verbose
+
+pages:
+  image: $CI_REGISTRY/ch/sormanni/freesasa_sys:latest
+  stage: Doc
+  script:
+    - cargo doc --no-deps
+    - mv target/doc public
+    - echo '<meta http-equiv="refresh" content="0; url={{ LIBRARY NAME }}">' > public/index.html
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+    - dev
