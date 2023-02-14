@@ -13,6 +13,9 @@ RustSASA aims to provide a safe idiomatic way of working with freesasa from with
 
 Please contact me via email, ow257@cam.ac.uk, if you are interested in access to RustSASA.
 
+## Docs
+https://ch.uniofcam.dev/sormanni/freesasa_sys
+
 ## License
 The MIT license
 
