@@ -2,22 +2,15 @@ stages:
   - lint
   - build
 
-default:
-  before_script:
-    - git config --global credential.helper store
-    - echo "https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.developers.cam.ac.uk" > ~/.git-credentials
-    - git config --global url."https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.developers.cam.ac.uk".insteadOf ssh://git@gitlab.developers.cam.ac.uk
-
 clippy:
   stage: lint
   image: $CI_REGISTRY/ch/sormanni/freesasa_sys:latest
   script:
-    - rustup component add clippy
     - cargo clippy
 
 rust-latest:
   stage: build
-  image: $CI_REGISTRY/ch/sormanni/frag-db/freesasa-sys:latest
+  image: $CI_REGISTRY/ch/sormanni/freesasa_sys:latest
   script:
     - cargo build --verbose
     - cargo test --verbose
