@@ -1,6 +1,6 @@
 [package]
 name = "freesasa-sys"
-version = "0.1.9"
+version = "0.1.10"
 edition = "2021"
 license-file = "LICENSE"
 keywords = ["bioinfomatics", "protein", "sasa", "structural-biology", "pdb"]
@@ -13,7 +13,7 @@ documentation = "https://docs.rs/freesasa-sys"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-bindgen = "0.64.0"
+bindgen = "0.69.4"
 autotools = "0.2"
 fs_extra = "1.2.0"
 
